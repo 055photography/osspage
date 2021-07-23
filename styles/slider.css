@@ -1,4 +1,70 @@
 slider-component {
     display: grid;
+    /* width: 100vw; */
+    height: 100vh;
     visibility: hidden;
+    background-color: rgba(113, 128, 147, 0.6);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 10;
+}
+
+slider-component #close {
+    position: fixed;
+    right: 5vw;
+    top: 5vw;
+    cursor: pointer;
+    width: auto;
+}
+
+slider-component #close svg {
+    width: 30px;
+    height: 30px;
+}
+
+slider-component #active-image {
+    max-width: 100%;
+    max-height: 80vh;
+   
+    display: grid;
+    align-self: center;
+    justify-content: center;
+}
+
+slider-component #active-image img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+slider-component.visible {
+    visibility: visible;
+}
+
+
+slider-component #image-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 10vw));
+    grid-auto-rows: 100px;
+    gap: 15px;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    padding: 20px;
+}
+
+slider-component #image-list img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    object-fit: cover;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }

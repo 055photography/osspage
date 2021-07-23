@@ -3,32 +3,27 @@ import { classMap } from 'https://unpkg.com/lit@2.0.0-rc.1/directives/class-map.
 
 
 class Images extends LitElement {
-    constructor() {
-        super()
-    }
-
     createRenderRoot() { return this; }
 
-    firstUpdated() {
-        var macy = Macy({
-            container: 'images-component',
-            trueOrder: false,
-            waitForImages: false,
-            margin: 10,
-            columns: 6,
-            breakAt: {
-                1200: 5,
-                940: 3,
-                520: 2,
-                400: 1
-            }
-        });
+    getSize(event) {
+        const image = event.currentTarget
+        const imageRatio = image.naturalWidth / image.naturalHeight
+        image.classList.add(imageRatio > 1 ? "image-wide" : "image-tall")
+    }
+
+    openCategory(image, event) {
+        window.dispatchEvent(new CustomEvent("openCategory", {
+            detail: image
+        }))
     }
 
     render() {
+        const images = window.settings.images
         return html`
-                    ${window.settings.images.map((image, index) => {
-                        return html`<img src="images/${image.file}"></img>`
+                    ${images.map((image, index) => { 
+                        return html`${index == 0 ? html`<div class="group-title">${image.category}</div>` : ""}
+                                    ${index > 1 && image.category != images[index - 1].category ? html`<div class="group-title">${image.category}</div>` : ""}
+                                     <img @click=${this.openCategory.bind(this, image)} @load=${this.getSize.bind(this)} src="images/${image.file}"></img>`
                     })}
                    `;
     }
