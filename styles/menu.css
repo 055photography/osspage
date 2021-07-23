@@ -1,0 +1,55 @@
+menu-component {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 0 clamp(10px, 5vw, 30px);
+    padding: 20px;
+    font-size: clamp(14px, 5vw, 18px);
+}
+
+menu-component .link-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px 0;
+    margin: 10px 0;
+}
+
+
+
+menu-component .link {
+    cursor: pointer;
+    border-bottom: solid 1px transparent;
+    height: 20px;
+}
+
+menu-component .link:hover {
+    border-bottom: solid 1px black;
+}
+
+menu-component .dropdown {
+    display: grid;
+    height: fit-content;
+}
+
+menu-component .dropdown .link-list {
+    visibility: hidden;
+}
+
+menu-component .dropdown.visible .link-list {
+    visibility: visible;
+}
+
+menu-component .dropdown .link {
+    display: grid;
+    grid-template-columns: auto auto;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 0 6px;
+}
+
+menu-component .dropdown .link svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+}

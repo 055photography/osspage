@@ -1,0 +1,76 @@
+{
+    "images": [
+        {
+            "file": "city1.jpg",
+            "category": "Linnad"
+        },
+        {
+            "file": "city2.jpg",
+            "category": "Linnad"
+        },
+        {
+            "file": "food1.jpg",
+            "category": "Toit"
+        },
+        {
+            "file": "food2.jpg",
+            "category": "Toit"
+        },
+        {
+            "file": "food3.jpg",
+            "category": "Toit"
+        },
+        {
+            "file": "food4.jpg",
+            "category": "Toit"
+        },
+        {
+            "file": "food5.jpg",
+            "category": "Toit"
+        },
+        {
+            "file": "food6.jpg",
+            "category": "Toit"
+        },
+        {
+            "file": "food7.jpg",
+            "category": "Toit"
+        },
+        {
+            "file": "food8.jpg",
+            "category": "Toit"
+        },
+        {
+            "file": "food9.jpg",
+            "category": "Toit"
+        },
+        {
+            "file": "person1.jpg",
+            "category": "Inimesed"
+        },
+        {
+            "file": "person2.jpg",
+            "category": "Inimesed"
+        },
+        {
+            "file": "person3.jpg",
+            "category": "Inimesed"
+        },
+        {
+            "file": "person4.jpg",
+            "category": "Inimesed"
+        },
+        {
+            "file": "person5.jpg",
+            "category": "Inimesed"
+        },
+        {
+            "file": "person6.jpg",
+            "category": "Inimesed"
+        },
+        {
+            "file": "person7.jpg",
+            "category": "Inimesed"
+        }
+    ]
+}

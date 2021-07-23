@@ -1,0 +1,40 @@
+@import url("./menu.css");
+@import url("./slider.css");
+
+:root {
+
+}
+
+body {
+    margin:0;
+    padding:0;
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    overflow-x: hidden;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    font-family: 'Open Sans Condensed', sans-serif;
+    /* font-size: 1.15em; */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+#page-content {
+    display: grid;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+images-component {
+    display: grid;
+    width: 80vw;
+}
+
+images-component img {
+    max-width: 100%;
+    display: block;
+    cursor: pointer;
+}
