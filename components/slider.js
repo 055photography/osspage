@@ -6,12 +6,14 @@ class Slider extends LitElement {
     constructor() {
         super()
         this.images = []
+        this.activeImage = null
         window.addEventListener("openCategory", this.init.bind(this))
     }
 
     init(event) {
         this.classList.add("visible")
         this.images = window.settings.images.filter(image => image.category == event.detail.category)
+        this.activeImage = this.images[0].file
         this.requestUpdate()
     }
 

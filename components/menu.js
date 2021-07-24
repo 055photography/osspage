@@ -5,7 +5,7 @@ class Menu extends LitElement {
     constructor() {
         super()
         this.category = null
-        this.categories = [...new Set(window.settings.images.map(item => item.category))]
+        this.categories = [...new Set(window.settings.images.map(item => item.category)), "Kõik"]
     }
 
     createRenderRoot() { return this; }
@@ -14,6 +14,7 @@ class Menu extends LitElement {
         window.dispatchEvent(new CustomEvent("changeCategory", {
             detail: this.category
         }))
+        this.querySelector(".dropdown").classList.remove("visible")
     }
 
     showCategories(event) {

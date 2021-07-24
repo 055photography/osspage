@@ -21,8 +21,9 @@ class Images extends LitElement {
         const images = window.settings.images
         return html`
                     ${images.map((image, index) => { 
-                        return html`${index == 0 ? html`<div class="group-title">${image.category}</div>` : ""}
-                                    ${index > 1 && image.category != images[index - 1].category ? html`<div class="group-title">${image.category}</div>` : ""}
+                        const groupTitle = html`<div class="group-title"><span>${image.category}</span></div>`;
+                        return html`${index == 0 ? groupTitle : ""}
+                                    ${index > 1 && image.category != images[index - 1].category ? groupTitle : ""}
                                      <img @click=${this.openCategory.bind(this, image)} @load=${this.getSize.bind(this)} src="images/${image.file}"></img>`
                     })}
                    `;

@@ -29,11 +29,11 @@ body {
 }
 
 images-component {
-    width: 80vw;
+    width: 100vw;
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    grid-auto-rows: 300px;
+    grid-auto-rows: minmax(90px, 250px);
 }
 
 images-component img {
@@ -70,12 +70,25 @@ images-component .image-wide {
 
 images-component .group-title {
     display: grid;
-    align-self: center;
+    align-self: end;
     align-items: center;
     text-align: center;
-    font-size: clamp(10px, 5vw, 30px);
     border: solid 1px black;
     height: 100%;
+    grid-column: span 2 / auto;
+}
+
+@media only screen and (min-width: 700px) {
+    images-component .group-title {
+        height: 100%;
+        grid-column: auto;
+    }
+  }
+
+images-component .group-title span {
+    /* transform: rotateZ(90deg);
+    transform-origin: center; */
+    font-size: clamp(16px, 10vw, 32px);
 }
 
 
