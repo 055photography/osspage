@@ -10,9 +10,13 @@ body {
     padding:0;
     width: 100vw;
     min-height: 100vh;
+    margin: 0 auto;
     display: grid;
     overflow-x: hidden;
     justify-content: center;
+    /* align-items: center; */
+    /* align-content: center; */
+    /* justify-items: center; */
     grid-template-columns: 1fr;
     font-family: 'Sintony', sans-serif;
     text-rendering: optimizeLegibility;
@@ -25,11 +29,13 @@ body {
     margin: 0;
     padding: 0;
     justify-content: center;
-    margin-top: 100px;
+    justify-self: center;
+    align-self: center;
+    margin: 70px 0;
 }
 
 images-component {
-    width: 100vw;
+    width: 100%;
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -73,9 +79,10 @@ images-component .group-title {
     align-self: end;
     align-items: center;
     text-align: center;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     height: 100%;
     grid-column: span 2 / auto;
+    background: lightgrey;
 }
 
 @media only screen and (min-width: 700px) {
@@ -89,6 +96,7 @@ images-component .group-title span {
     /* transform: rotateZ(90deg);
     transform-origin: center; */
     font-size: clamp(16px, 10vw, 32px);
+    /* color: white; */
 }
 
 

@@ -7,7 +7,7 @@ class Slider extends LitElement {
         super()
         this.images = []
         this.activeImage = null
-        window.addEventListener("openCategory", this.init.bind(this))
+        // window.addEventListener("openCategory", this.init.bind(this))
     }
 
     init(event) {

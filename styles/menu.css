@@ -11,7 +11,7 @@ menu-component {
     right: 0;
     margin: 0 auto;
     z-index: 5;
-    background: white;
+    background: rgba(215, 215, 215, 0.6);
     height: 20px;
 }
 

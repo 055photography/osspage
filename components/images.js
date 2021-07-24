@@ -15,6 +15,16 @@ class Images extends LitElement {
         window.dispatchEvent(new CustomEvent("openCategory", {
             detail: image
         }))
+
+        const images = window.settings.images.filter(img => img.category == image.category).map(img => `images/${img.file}`);
+        const lightbox = new FsLightbox();
+
+        // set up props, like sources, types, events etc.
+        lightbox.props.sources = images
+        lightbox.props.thumbs = images
+        lightbox.props.onInit = () => console.log('Lightbox initialized!');
+
+        lightbox.open();
     }
 
     render() {

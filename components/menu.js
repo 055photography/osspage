@@ -27,14 +27,12 @@ class Menu extends LitElement {
 
     render() {
         return html`
-                    <span class="link">Kodu</span>
                     <div class="dropdown" @mouseover=${this.showCategories}>
                         <span class="link">Kategooriad <svg-loader src="icons/down.svg"></svg-loader></span>
                         <div @mouseleave=${this.removeCategories} class="link-list">
                             ${this.categories.map(item => html`<span class="link" @click=${e => this.changeCategory(e, item)}>${item}</span>`)}
                         </div>
                     </div>
-                    <span class="link">Kontakt</span>
                    `;
     }
 }
