@@ -39,7 +39,7 @@ class Menu extends LitElement {
                             <svg-loader src="icons/instagram.svg"></svg-loader>
                         </a>
 
-                        <a title="e-mail" href="" target="_blank">
+                        <a title="e-mail" href="mailto:oskarkivilaan@gmail.com" target="_blank">
                             <svg-loader src="icons/email.svg"></svg-loader>
                             <span>oskar@gmail.ee</span>
                         </a>
