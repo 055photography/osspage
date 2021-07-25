@@ -4,15 +4,14 @@ import { classMap } from 'https://unpkg.com/lit@2.0.0-rc.1/directives/class-map.
 class Menu extends LitElement {
     constructor() {
         super()
-        this.category = null
-        this.categories = [...new Set(window.settings.images.map(item => item.category)), "Kõik"]
+        this.categories = ["Kõik", ...new Set(window.settings.images.map(item => item.category))]
     }
 
     createRenderRoot() { return this; }
 
-    changeCategory() {
+    changeCategory(value) {
         window.dispatchEvent(new CustomEvent("changeCategory", {
-            detail: this.category
+            detail: value
         }))
         this.querySelector(".dropdown").classList.remove("visible")
     }
@@ -30,9 +29,21 @@ class Menu extends LitElement {
                     <div class="dropdown" @mouseover=${this.showCategories}>
                         <span class="link">Kategooriad <svg-loader src="icons/down.svg"></svg-loader></span>
                         <div @mouseleave=${this.removeCategories} class="link-list">
-                            ${this.categories.map(item => html`<span class="link" @click=${e => this.changeCategory(e, item)}>${item}</span>`)}
+                            ${this.categories.map(item => html`<span class="link" @click=${this.changeCategory.bind(this, item)}>${item}</span>`)}
                         </div>
                     </div>
+
+
+                    <section id="links">
+                        <a title="instagram" href="https://www.instagram.com/055photography" target="_blank">
+                            <svg-loader src="icons/instagram.svg"></svg-loader>
+                        </a>
+
+                        <a title="e-mail" href="" target="_blank">
+                            <svg-loader src="icons/email.svg"></svg-loader>
+                            <span>oskar@gmail.ee</span>
+                        </a>
+                    </section>
                    `;
     }
 }

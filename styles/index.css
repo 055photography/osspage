@@ -2,7 +2,7 @@
 @import url("./slider.css");
 
 :root {
-
+    --white: #ecf0f1;
 }
 
 body {
@@ -10,13 +10,9 @@ body {
     padding:0;
     width: 100vw;
     min-height: 100vh;
-    margin: 0 auto;
     display: grid;
     overflow-x: hidden;
-    justify-content: center;
-    /* align-items: center; */
-    /* align-content: center; */
-    /* justify-items: center; */
+    align-content: baseline;
     grid-template-columns: 1fr;
     font-family: 'Sintony', sans-serif;
     text-rendering: optimizeLegibility;
@@ -35,7 +31,7 @@ body {
 }
 
 images-component {
-    width: 100%;
+    width: 70vw;
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -81,22 +77,23 @@ images-component .group-title {
     text-align: center;
     /* border: solid 1px black; */
     height: 100%;
-    grid-column: span 2 / auto;
-    background: lightgrey;
+    grid-column: auto;
+    background: var(--white);
 }
 
-@media only screen and (min-width: 700px) {
-    images-component .group-title {
-        height: 100%;
-        grid-column: auto;
+svg-loader {
+    display: grid;
+    align-items: center;
+}
+
+@media only screen and (max-width: 700px) {
+    images-component {
+        width: 95vw;
     }
-  }
+}
 
 images-component .group-title span {
-    /* transform: rotateZ(90deg);
-    transform-origin: center; */
     font-size: clamp(16px, 10vw, 32px);
-    /* color: white; */
 }
 
 
