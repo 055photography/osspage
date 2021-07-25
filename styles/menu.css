@@ -1,14 +1,14 @@
 menu-component {
     display: grid;
-    grid-template-columns: 0.4fr 0.8fr;
-    gap: 0 clamp(10px, 5vw, 30px);
+    grid-template-columns: 200px 1fr;
+    justify-items: end;
     padding: 10px;
-    font-size: clamp(14px, 5vw, 18px);
+    /* font-size: clamp(14px, 5vw, 18px); */
     position: fixed;
     top:  0;
     left: 0;
     z-index: 5;
-    background: var(--white);
+    background: white;
     height: auto;
     width: 100%;
 }
@@ -78,9 +78,12 @@ menu-component #logo {
 menu-component #links {
     display: grid;
     grid-template-columns: auto auto;
-    justify-content: left;
+    /* justify-content: left; */
     align-content: center;
     gap: 0 5px;
+    position: absolute;
+    right:  5vw;
+    top: 10px;
 }
 
 menu-component #links a {
@@ -97,7 +100,6 @@ menu-component #links a span {
     height: auto;
     justify-content: center;
     align-items: center;
-    vertical-align: center;
     color:black;
     font-size: clamp(12px, 5vw, 16px);
 }

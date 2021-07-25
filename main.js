@@ -10,8 +10,6 @@ fetch("settings.json").catch(error => console.log(error)).then(data => data.json
     render(html`
         <menu-component></menu-component>
     
-        <section id="page-content">
-            <images-component></images-component>
-        </section>
+        <images-component></images-component>
     `, document.body)
 })

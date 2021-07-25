@@ -10,27 +10,22 @@ body {
     padding:0;
     width: 100vw;
     min-height: 100vh;
+    justify-items: center;
     display: grid;
     overflow-x: hidden;
     align-content: baseline;
     grid-template-columns: 1fr;
+    box-sizing: border-box;
     font-family: 'Sintony', sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
 
-#page-content {
-    display: grid;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    justify-self: center;
-    align-self: center;
-    margin: 70px 0;
-}
+body {}
+
 
 images-component {
+    margin: 70px 0;
     width: 70vw;
     display: grid;
     gap: 10px;
