@@ -81,7 +81,7 @@ menu-component #links {
     align-content: center;
     gap: 0 5px;
     position: absolute;
-    right:  20px;
+    right:  10vw;
     top: 10px;
 }
 
