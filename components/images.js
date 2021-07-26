@@ -1,6 +1,5 @@
 import { LitElement, html } from 'https://unpkg.com/lit@2.0.0-rc.1/index.js?module';
 
-
 class Images extends LitElement {
     constructor() {
         super()
@@ -15,24 +14,22 @@ class Images extends LitElement {
         this.images = window.settings.images
     }
 
-    createRenderRoot() { return this; }
+   createRenderRoot() { return this; }
 
-    getSize(event) {
+   setNaturalProps(index, event) {
         const image = event.currentTarget
         const imageRatio = image.naturalWidth / image.naturalHeight
-        image.classList.add(imageRatio > 1 ? "image-wide" : "image-tall")
+        window.settings.images[index].class = imageRatio > 1 ? "image-wide" : "image-tall"
+        if (index == window.settings.images.length - 1) this.requestUpdate()
     }
 
     openCategory(image, event) {
         const filteredImages =  window.settings.images.filter(img => img.category == image.category)
         const imageUrls = filteredImages.map(img => `images/${img.file}`);
         const lightbox = new FsLightbox();
-
-        // set up props, like sources, types, events etc.
+  
         lightbox.props.sources = imageUrls
-        // lightbox.props.thumbs = images
         lightbox.props.onInit = () => {
-            console.log(filteredImages.findIndex(img => img.file == image.file))
             lightbox.core.slideIndexChanger.changeTo(filteredImages.findIndex(img => img.file == image.file))
         }
       
@@ -45,7 +42,7 @@ class Images extends LitElement {
                         const groupTitle = html`<div class="group-title"><span>${image.category}</span></div>`;
                         return html`${index == 0 ? groupTitle : ""}
                                     ${index > 1 && image.category != this.images[index - 1].category ? groupTitle : ""}
-                                     <img @click=${this.openCategory.bind(this, image)} @load=${this.getSize.bind(this)} src="images/${image.file}"></img>`
+                                     <img class="${image.class}" @click=${this.openCategory.bind(this, image)} @load=${this.setNaturalProps.bind(this, index)} src="images/${image.file}"></img>`
                     })}
                    `;
     }
