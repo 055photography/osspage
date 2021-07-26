@@ -1,5 +1,4 @@
 import { LitElement, html } from 'https://unpkg.com/lit@2.0.0-rc.1/index.js?module';
-import { classMap } from 'https://unpkg.com/lit@2.0.0-rc.1/directives/class-map.js?module';
 
 
 class Images extends LitElement {
@@ -25,14 +24,18 @@ class Images extends LitElement {
     }
 
     openCategory(image, event) {
-        const images = window.settings.images.filter(img => img.category == image.category).map(img => `images/${img.file}`);
+        const filteredImages =  window.settings.images.filter(img => img.category == image.category)
+        const imageUrls = filteredImages.map(img => `images/${img.file}`);
         const lightbox = new FsLightbox();
 
         // set up props, like sources, types, events etc.
-        lightbox.props.sources = images
+        lightbox.props.sources = imageUrls
         // lightbox.props.thumbs = images
-        lightbox.props.onInit = () => console.log('Lightbox initialized!');
-
+        lightbox.props.onInit = () => {
+            console.log(filteredImages.findIndex(img => img.file == image.file))
+            lightbox.core.slideIndexChanger.changeTo(filteredImages.findIndex(img => img.file == image.file))
+        }
+      
         lightbox.open();
     }
 

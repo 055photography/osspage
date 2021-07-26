@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://unpkg.com/lit@2.0.0-rc.1/index.js?module';
-import { classMap } from 'https://unpkg.com/lit@2.0.0-rc.1/directives/class-map.js?module';
+
 
 class Menu extends LitElement {
     constructor() {
@@ -41,7 +41,7 @@ class Menu extends LitElement {
 
                         <a title="e-mail" href="mailto:oskarkivilaan@gmail.com" target="_blank">
                             <svg-loader src="icons/email.svg"></svg-loader>
-                            <span>oskar@gmail.ee</span>
+                            <span>oskarkivilaan@gmail.com</span>
                         </a>
                     </section>
                    `;
