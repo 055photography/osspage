@@ -73,7 +73,6 @@ menu-component #logo {
     align-self: flex-start;
 }
 
-
 menu-component #links {
     display: grid;
     grid-template-columns: auto auto;
@@ -100,10 +99,10 @@ menu-component #links a span {
     justify-content: center;
     align-items: center;
     color:black;
-    font-size: clamp(12px, 5vw, 16px);
+    font-size: clamp(11px, 5vw, 14px);
 }
 
 menu-component #links svg {
-    width: clamp(15px, 5vw, 30px);
-    height: clamp(15px, 5vw, 30px);
+    width: clamp(15px, 5vw, 25px);
+    height: clamp(15px, 5vw, 25px);
 }
